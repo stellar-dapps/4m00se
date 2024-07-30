@@ -1,6 +1,6 @@
 import FormWidget from './FormWidget.svelte';
 
-export function init(options) {
+export function initFormWidget(options) {
   const { container, config, onSubmit } = options;
   const rootElement = document.getElementById(container);
 
@@ -13,5 +13,3 @@ export function init(options) {
     console.error(`Container with id "${container}" not found.`);
   }
 }
-
-// window.WidgetSDK = { init };
