@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '@picocss/pico/css/pico.css';
   import { Counter } from '$lib/index.ts';
 </script>
 

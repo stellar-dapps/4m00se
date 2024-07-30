@@ -24,6 +24,6 @@
   <h1>Form Reader</h1>
 
   <a href="/">Back to Home</a>
-  
+
   <div id="form-widget-container"></div>
 </main>
