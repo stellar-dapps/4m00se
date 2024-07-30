@@ -41,5 +41,8 @@
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@picocss/pico": "^2.0.6"
+  }
 }
