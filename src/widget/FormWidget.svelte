@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { FormConfig } from './models/form-config.model.ts';
+  import '@picocss/pico/css/pico.css';
+  import type { FormConfig } from '$lib/models/form-config.model.ts';
 
   export let config: FormConfig;
   export let onSubmit;

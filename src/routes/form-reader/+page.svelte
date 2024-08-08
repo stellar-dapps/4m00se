@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { initFormWidget } from '$lib/init-form-widget.ts';
+  import { initFormWidget } from '../../widget/init-form-widget.ts';
   import { onMount } from 'svelte';
 
   onMount(() => {
@@ -20,10 +20,10 @@
   });
 </script>
 
-<main>
-  <h1>Form Reader</h1>
+<svelte:head>
+  <title>4m00se — Form Reader</title>
+</svelte:head>
 
-  <a href="/">Back to Home</a>
+<h1>Form Reader</h1>
 
-  <div id="form-widget-container"></div>
-</main>
+<div id="form-widget-container"></div>

@@ -35,35 +35,35 @@
   }
 </script>
 
-<main>
-  <h1>Form Builder</h1>
+<svelte:head>
+  <title>4m00se — Form builder</title>
+</svelte:head>
 
-  <a href="/">Back to Home</a>
+<h1>Form Builder</h1>
 
-  <form on:submit={handleSubmit}>
-    {#each formFields as field, index}
-      {#if field.type === 'text'}
-        <TextInput
-          label={field.label}
-          name={field.name}
-          value={field.value}
-          onChange={(value) => handleChange(index, value)}
-        />
-      {/if}
-      {#if field.type === 'checkbox'}
-        <Checkbox
-          label={field.label}
-          name={field.name}
-          checked={field.checked}
-          onChange={(checked) => handleCheckboxChange(index, checked)}
-        />
-      {/if}
-      <button type="button" on:click={() => removeField(index)}>Remove</button>
-    {/each}
-    <button type="submit">Submit</button>
-  </form>
+<form on:submit={handleSubmit}>
+  {#each formFields as field, index}
+    {#if field.type === 'text'}
+      <TextInput
+        label={field.label}
+        name={field.name}
+        value={field.value}
+        onChange={(value) => handleChange(index, value)}
+      />
+    {/if}
+    {#if field.type === 'checkbox'}
+      <Checkbox
+        label={field.label}
+        name={field.name}
+        checked={field.checked}
+        onChange={(checked) => handleCheckboxChange(index, checked)}
+      />
+    {/if}
+    <button type="button" on:click={() => removeField(index)}>Remove</button>
+  {/each}
+  <button type="submit">Submit</button>
+</form>
 
-  <h2>Add Field</h2>
-  <button on:click={() => addField('text')}>Add Text Input</button>
-  <button on:click={() => addField('checkbox')}>Add Checkbox</button>
-</main>
+<h2>Add Field</h2>
+<button on:click={() => addField('text')}>Add Text Input</button>
+<button on:click={() => addField('checkbox')}>Add Checkbox</button>
