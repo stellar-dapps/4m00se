@@ -1,5 +1,5 @@
 <footer class="container">
-  <p>&copy; 2024 <a href="https://fyodor.io">fyodor.io</a></p>
+  <p>&copy; 2024 <a target=”_blank” href="https://fyodor.io">fyodor.io</a></p>
 </footer>
 
 <style>
