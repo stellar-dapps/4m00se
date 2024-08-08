@@ -1,14 +1,47 @@
+<script lang="ts">
+  import { onDestroy, onMount } from 'svelte';
+  import NavItems from '$lib/components/NavItems.svelte';
+
+  let isWideScreen = true;
+
+  onMount(() => {
+    if (typeof window !== 'undefined') {
+      isWideScreen = window.matchMedia('(min-width: 768px)').matches;
+      window.addEventListener('resize', handleResize);
+    }
+  });
+
+  function handleResize() {
+    if (typeof window !== 'undefined') {
+      isWideScreen = window.matchMedia('(min-width: 768px)').matches;
+    }
+  }
+
+  onDestroy(() => {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', handleResize);
+    }
+  });
+</script>
+
 <header class="container">
   <nav>
     <ul>
       <li><a href="/" class="contrast"><strong>🫎 4m00se</strong></a></li>
     </ul>
     <ul>
-      <li><a href="/dashboard" class="contrast">Dashboard</a></li>
-      <li><a href="/form-builder" class="contrast">Form Builder</a></li>
-      <li><a href="/form-reader" class="contrast">Form Analyzer</a></li>
-      <li><a href="/docs" class="contrast">Docs</a></li>
-      <li><button class="secondary">Sign In</button></li>
+      {#if isWideScreen}
+        <NavItems />
+      {:else}
+        <li>
+          <details class="dropdown">
+            <summary> Menu </summary>
+            <ul dir="rtl">
+              <NavItems />
+            </ul>
+          </details>
+        </li>
+      {/if}
     </ul>
   </nav>
 </header>
