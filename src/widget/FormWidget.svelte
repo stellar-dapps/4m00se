@@ -1,5 +1,4 @@
 <script lang="ts">
-  import '@picocss/pico/css/pico.css';
   import type { FormConfig } from '$lib/models/form-config.model.ts';
 
   export let config: FormConfig;
@@ -41,3 +40,7 @@
   {/each}
   <button type="submit">Submit</button>
 </form>
+
+<style>
+  @import '@picocss/pico/css/pico.css';
+</style>
