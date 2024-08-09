@@ -42,5 +42,5 @@
 </form>
 
 <style>
-  @import '@picocss/pico/css/pico.css';
+  @import '@picocss/pico/css/pico.min.css';
 </style>

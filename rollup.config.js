@@ -4,6 +4,10 @@ import resolve from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import { sveltePreprocess } from 'svelte-preprocess';
 import atImport from 'postcss-import';
+import autoprefixer from 'autoprefixer';
+import gzipPlugin from 'rollup-plugin-gzip';
+import filesize from 'rollup-plugin-filesize';
+import strip from '@rollup/plugin-strip';
 
 export default {
   input: 'src/widget/init-form-widget.ts',
@@ -20,12 +24,22 @@ export default {
     svelte({
       emitCss: false,
       preprocess: sveltePreprocess({
+        sourceMap: false,
         postcss: {
-          plugins: [atImport()]
+          minimize: true,
+          plugins: [atImport(), autoprefixer()]
         }
-      })
+      }),
+      compilerOptions: {
+        enableSourcemap: false
+      }
     }),
     resolve({ browser: true, dedupe: ['svelte'] }),
-    terser()
+    terser(),
+    gzipPlugin(),
+    filesize(),
+    strip({
+      sourceMap: false
+    })
   ]
 };
