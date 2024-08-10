@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "@picocss/pico": "^2.0.6",
-    "@stellar/freighter-api": "^2.0.0"
+    "@stellar/freighter-api": "^2.0.0",
+    "markdown-it": "^14.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
