@@ -5,6 +5,20 @@ body {
   flex-direction: column;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  padding-top: 2rem;
+  gap: 1rem;
+}
+
+h1 {
+  text-align: center;
 }

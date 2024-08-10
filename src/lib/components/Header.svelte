@@ -6,14 +6,14 @@
 
   onMount(() => {
     if (typeof window !== 'undefined') {
-      isWideScreen = window.matchMedia('(min-width: 768px)').matches;
+      isWideScreen = window.matchMedia('(min-width: 1024px)').matches;
       window.addEventListener('resize', handleResize);
     }
   });
 
   function handleResize() {
     if (typeof window !== 'undefined') {
-      isWideScreen = window.matchMedia('(min-width: 768px)').matches;
+      isWideScreen = window.matchMedia('(min-width: 1024px)').matches;
     }
   }
 
