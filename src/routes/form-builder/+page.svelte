@@ -2,6 +2,21 @@
   import TextInput from '$lib/components/TextInput.svelte';
   import Checkbox from '$lib/components/Checkbox.svelte';
   import type { FormBuilderItem } from '$lib/models/form-builder-item.model.ts';
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { authStore } from '$lib/stores/auth.store.ts';
+
+  onMount(() => {
+    let isAuthenticated;
+
+    authStore.subscribe((value) => {
+      isAuthenticated = value.isAuthenticated;
+    });
+
+    if (!isAuthenticated) {
+      goto('/');
+    }
+  });
 
   let formFields: FormBuilderItem[] = [
     { type: 'text', label: 'Name', name: 'name', value: '' },

@@ -1,8 +1,20 @@
 <script lang="ts">
   import { initFormWidget } from '../../widget/init-form-widget.ts';
   import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
+  import { authStore } from '$lib/stores/auth.store.ts';
 
   onMount(() => {
+    let isAuthenticated;
+
+    authStore.subscribe((value) => {
+      isAuthenticated = value.isAuthenticated;
+    });
+
+    if (!isAuthenticated) {
+      goto('/');
+    }
+
     initFormWidget({
       container: 'form-widget-container',
       config: {

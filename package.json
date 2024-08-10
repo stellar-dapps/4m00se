@@ -1,6 +1,7 @@
 {
   "name": "4m00se",
-  "version": "0.2.0",
+  "version": "0.3.0",
+  "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -12,7 +13,8 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@picocss/pico": "^2.0.6"
+    "@picocss/pico": "^2.0.6",
+    "@stellar/freighter-api": "^2.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
@@ -36,6 +38,5 @@
     "tslib": "^2.6.3",
     "typescript": "^5.0.0",
     "vite": "^5.0.11"
-  },
-  "type": "module"
+  }
 }
