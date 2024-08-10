@@ -53,7 +53,7 @@
     </div>
   {/each}
   {#if config.consent}<small id="consent">{@html md.render(config.consent)}</small>{/if}
-  <button type="submit">{config.submitButtonTitle ?? 'Submit'}</button>
+  <button type="submit" class="contrast">{config.submitButtonTitle ?? 'Submit'}</button>
 </form>
 
 <style>
