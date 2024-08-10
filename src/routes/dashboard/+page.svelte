@@ -42,3 +42,11 @@
     </footer>
   </article>
 </dialog>
+
+<style>
+  #modal-example header,
+  #modal-example footer {
+    background-color: transparent;
+    border: none;
+  }
+</style>

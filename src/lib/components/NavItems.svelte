@@ -20,7 +20,11 @@
   </li>
 {/if}
 <li><a href="/docs" class="secondary" class:contrast={$page.url.pathname === '/docs'}>Get Started</a></li>
-<li><a href="https://github.com/stellar-dapps/4m00se" class="secondary">GitHub ↗️</a></li>
-<li><a href="/demo/Stellar _ Build Better on Stellar_ Smart Contract Challenge.html" class="secondary">Demo ↗️</a></li>
+<li><a href="https://github.com/stellar-dapps/4m00se" class="secondary" target="_blank">GitHub ↗️</a></li>
+<li>
+  <a href="/demo/Stellar _ Build Better on Stellar_ Smart Contract Challenge.html" class="secondary" target="_blank"
+    >Demo ↗️</a
+  >
+</li>
 
 <li><AuthButton /></li>
