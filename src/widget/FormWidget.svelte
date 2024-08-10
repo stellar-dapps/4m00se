@@ -43,4 +43,8 @@
 
 <style>
   @import '@picocss/pico/css/pico.min.css';
+
+  form {
+    font-family: var(--pico-font-family);
+  }
 </style>

@@ -20,4 +20,6 @@ export function initFormWidget(options) {
   }
 }
 
-window.WidgetSDK = { initFormWidget };
+if (typeof window != 'undefined') {
+  window.WidgetSDK = { initFormWidget };
+}
