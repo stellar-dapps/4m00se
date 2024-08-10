@@ -1,5 +1,3 @@
-<script lang="ts"></script>
-
 <svelte:head>
   <title>4m00se — Welcome!</title>
 </svelte:head>
