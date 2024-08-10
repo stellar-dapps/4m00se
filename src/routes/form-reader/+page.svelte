@@ -3,6 +3,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { authStore } from '$lib/stores/auth.store.ts';
+  import { StellarConfig } from '$lib/content/configs/stellar.config.js';
 
   onMount(() => {
     let isAuthenticated;
@@ -17,13 +18,7 @@
 
     initFormWidget({
       container: 'form-widget-container',
-      config: {
-        fields: [
-          { name: 'name', label: 'Name', type: 'text' },
-          { name: 'email', label: 'Email', type: 'email' }
-        ],
-        submitUrl: '#'
-      },
+      config: StellarConfig,
       onSubmit: (data) => {
         console.log('Form submitted:', data);
         alert('Form submitted successfully!');

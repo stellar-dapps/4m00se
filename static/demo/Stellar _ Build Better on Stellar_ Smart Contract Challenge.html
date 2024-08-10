@@ -11266,16 +11266,28 @@
                              class="sc-eb69a4b0-0 kTnzeQ">
                           <div id="form-b4139e09-1f63-438b-844d-b99b925e561b"></div>
                         </div>-->
-                            <div id="form-widget-container"></div>
+                            <div id="4m00se-widget-container"></div>
                             <script>
                               WidgetSDK.initFormWidget({
-                                container: 'form-widget-container',
+                                container: '4m00se-widget-container',
                                 config: {
                                   fields: [
-                                    { name: 'name', label: 'Name', type: 'text' },
-                                    { name: 'email', label: 'Email', type: 'email' }
+                                    { name: 'email', label: 'Email', type: 'email', required: true },
+                                    { name: 'github', label: 'GitHub Username' },
+                                    { name: 'repo', label: 'Repo Link (Optional)' },
+                                    {
+                                      name: 'post',
+                                      label: 'Dev.to Submission Post',
+                                      required: true,
+                                      placeholder: 'Link to your project hosted on dev.to'
+                                    }
                                   ],
-                                  submitUrl: 'https://your-backend-api.com/submit'
+                                  submitUrl: '#',
+                                  consent:
+                                    'By providing the contact information required in this form, you agree to be contacted by the Stellar Development Foundation (SDF) in order for us to inform you about our products and services. For more information on our privacy practices or how to unsubscribe, please refer to our [Privacy Policy](https://stellar.org/privacy-policy).',
+                                  styles: {
+                                    isRounded: true
+                                  }
                                 },
                                 onSubmit: (data) => {
                                   console.log('Form submitted:', data);

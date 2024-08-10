@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>4m00se — Welcome!</title>
+  <title>4m00se — Create embeddable forms using blockchain technology</title>
 </svelte:head>
 
 <h1>Build forms with ease using <strong>4m00se</strong></h1>
