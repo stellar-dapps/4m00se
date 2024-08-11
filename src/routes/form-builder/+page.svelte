@@ -53,7 +53,7 @@
   // TODO implement the functionality
   const createNewForm = async () => {
     const newFormData = {
-      // Your form data here
+      /* ... */
     };
     await formStore.createNewFormConfiguration(newFormData);
   };

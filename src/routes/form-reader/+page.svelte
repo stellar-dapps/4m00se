@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { authStore } from '$lib/stores/auth.store.ts';
-  import { StellarConfig } from '$lib/content/configs/stellar.config.js';
+  import { StellarConfig } from '$lib/content/mocks/stellar-config.ts';
 
   onMount(() => {
     let isAuthenticated;

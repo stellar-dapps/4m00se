@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { fetchFormConfigurations, createFormConfiguration } from '$lib/api/form-configurations.api.ts';
 import { fetchFormSubmissions } from '$lib/api/form-submissions.api.ts';
-import type { FormConfig } from '$lib/models/form-config.model.js';
+import type { FormConfig } from '$lib/models/form-config.model.ts';
 
 interface FormStoreState {
   formConfigurations?: FormConfig[];
@@ -18,37 +18,37 @@ function createFormStore() {
     error: null
   });
 
-  const fetchFormConfigurationsForUser = async (userId: string) => {
-    // set({ loading: true, error: null });
-    // try {
-    //   const data = await fetchFormConfigurations(userId);
-    //   set({ formConfigurations: data, loading: false });
-    // } catch (error: any) {
-    //   set({ error: error.message, loading: false });
-    // }
+  const fetchFormConfigurationsForUser = async (userId: string, fetch: any) => {
+    set({ loading: true, error: null });
+    try {
+      const data = await fetchFormConfigurations(userId, fetch);
+      set({ formConfigurations: data, loading: false });
+    } catch (error: any) {
+      set({ error: error.message, loading: false });
+    }
   };
 
-  const fetchFormSubmissionsForForm = async (formId: string) => {
-    // set({ loading: true, error: null });
-    // try {
-    //   const data = await fetchFormSubmissions(formId);
-    //   set({ formSubmissions: data, loading: false });
-    // } catch (error: any) {
-    //   set({ error: error.message, loading: false });
-    // }
+  const fetchFormSubmissionsForForm = async (formId: string, fetch: any) => {
+    set({ loading: true, error: null });
+    try {
+      const data = await fetchFormSubmissions(formId, fetch);
+      set({ formSubmissions: data, loading: false });
+    } catch (error: any) {
+      set({ error: error.message, loading: false });
+    }
   };
 
   const createNewFormConfiguration = async (formData: any) => {
-    // set({ loading: true, error: null });
-    // try {
-    //   const data = await createFormConfiguration(formData);
-    //   update((state: FormStoreState) => ({
-    //     formConfigurations: [...state?.formConfigurations!, data],
-    //     loading: false
-    //   }));
-    // } catch (error: any) {
-    //   set({ error: error.message, loading: false });
-    // }
+    set({ loading: true, error: null });
+    try {
+      const data = await createFormConfiguration(formData, fetch);
+      update((state: FormStoreState) => ({
+        formConfigurations: [...state?.formConfigurations!, data],
+        loading: false
+      }));
+    } catch (error: any) {
+      set({ error: error.message, loading: false });
+    }
   };
 
   return {

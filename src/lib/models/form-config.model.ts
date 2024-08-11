@@ -11,9 +11,15 @@ interface FormStyles {
 }
 
 export interface FormConfig {
+  id: string;
+  createdBy: string;
+  createdAt: Date;
+  name: string;
   fields: FormField[];
   submitUrl: string;
   submitButtonTitle?: string; // default = 'Submit'
   consent?: string; // default = '', markdown allowed
   styles?: FormStyles;
+  description?: string;
+  webHookUrl?: string;
 }
