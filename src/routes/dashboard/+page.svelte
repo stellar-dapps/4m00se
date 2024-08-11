@@ -4,7 +4,6 @@
   import { authStore } from '$lib/stores/auth.store.ts';
   import { toggleModal } from '$lib/utils/modal.ts';
   import type { FormConfigListPageData } from '$lib/models/page-data.model.ts';
-  import { formStore } from '$lib/stores/form.store.ts';
 
   export let data: FormConfigListPageData;
 
@@ -29,15 +28,17 @@
 
 <h1>Welcome to your <strong>4m00se</strong>Dashboard</h1>
 
-<button class="contrast" data-target="modal-example" on:click={toggleModal}
-  >Build your {formConfigurations.length ? 'next' : 'first'} form</button
->
+<a href="/form-builder" role="button" class="contrast">
+  Build your {formConfigurations.length ? 'next' : 'first'} form
+</a>
 
 <ul>
   {#each formConfigurations as formConfig}
     <li><code>{JSON.stringify(formConfig, null, 4)}</code></li>
   {/each}
 </ul>
+
+<button class="secondary" data-target="modal-example" on:click={toggleModal}>Modal test</button>
 
 <dialog id="modal-example">
   <article>

@@ -1,4 +1,4 @@
-import type { FormSubmission } from '$lib/models/form-submission.model.js';
+import type { FormSubmission } from '$lib/models/form-submission.model.ts';
 
 // related to mock-configuration-list content
 

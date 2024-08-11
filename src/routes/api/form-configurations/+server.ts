@@ -1,7 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import { json } from '@sveltejs/kit';
 import type { FormConfig } from '$lib/models/form-config.model.ts';
-import { mockFormConfigs } from '$lib/content/mocks/mock-configuration-list.js';
+import { mockFormConfigs } from '$lib/content/mocks/mock-configuration-list.ts';
 
 let temporaryFormConfigList: FormConfig[] = mockFormConfigs;
 

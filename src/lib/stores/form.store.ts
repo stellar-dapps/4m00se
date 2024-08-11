@@ -3,6 +3,8 @@ import { fetchFormConfigurations, createFormConfiguration } from '$lib/api/form-
 import { fetchFormSubmissions } from '$lib/api/form-submissions.api.ts';
 import type { FormConfig } from '$lib/models/form-config.model.ts';
 
+// TODO form store is practically not used yet (but should be)
+
 interface FormStoreState {
   formConfigurations?: FormConfig[];
   formSubmissions?: any[];

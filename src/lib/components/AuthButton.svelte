@@ -1,6 +1,6 @@
 <script lang="ts">
-  import FreighterAPI from '@stellar/freighter-api';
   import { onMount } from 'svelte';
+  import FreighterAPI from '@stellar/freighter-api';
   import { authStore } from '$lib/stores/auth.store.ts';
 
   const { isAllowed, setAllowed, getUserInfo, isConnected } = FreighterAPI;

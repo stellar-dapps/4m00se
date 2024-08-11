@@ -1,11 +1,10 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+  import { goto } from '$app/navigation';
   import TextInput from '$lib/components/TextInput.svelte';
   import Checkbox from '$lib/components/Checkbox.svelte';
   import type { FormBuilderItem } from '$lib/models/form-builder-item.model.ts';
-  import { onMount } from 'svelte';
-  import { goto } from '$app/navigation';
   import { authStore } from '$lib/stores/auth.store.ts';
-  import { formStore } from '$lib/stores/form.store.ts';
 
   onMount(() => {
     let isAuthenticated;
@@ -55,7 +54,7 @@
     const newFormData = {
       /* ... */
     };
-    await formStore.createNewFormConfiguration(newFormData);
+    // await formStore.createNewFormConfiguration(newFormData);
   };
 </script>
 
@@ -83,11 +82,11 @@
         onChange={(checked) => handleCheckboxChange(index, checked)}
       />
     {/if}
-    <button type="button" on:click={() => removeField(index)}>Remove</button>
+    <button class="secondary" type="button" on:click={() => removeField(index)}>Remove</button>
   {/each}
-  <button type="submit">Submit</button>
+  <button class="secondary" type="submit">Submit</button>
 </form>
 
 <h2>Add Field</h2>
-<button on:click={() => addField('text')}>Add Text Input</button>
-<button on:click={() => addField('checkbox')}>Add Checkbox</button>
+<button class="secondary" on:click={() => addField('text')}>Add Text Input</button>
+<button class="secondary" on:click={() => addField('checkbox')}>Add Checkbox</button>
