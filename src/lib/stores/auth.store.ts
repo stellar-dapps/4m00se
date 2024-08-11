@@ -1,11 +1,11 @@
 import { writable } from 'svelte/store';
 
-interface AuthStore {
+interface AuthStoreState {
   isAuthenticated: boolean;
   user: string | null;
 }
 
-export const authStore = writable<AuthStore>({
+export const authStore = writable<AuthStoreState>({
   isAuthenticated: false,
   user: null
 });

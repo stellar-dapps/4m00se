@@ -5,6 +5,7 @@
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
   import { authStore } from '$lib/stores/auth.store.ts';
+  import { formStore } from '$lib/stores/form.store.ts';
 
   onMount(() => {
     let isAuthenticated;
@@ -48,6 +49,14 @@
     // Submit the form data and sign it with a smart contract
     // ...
   }
+
+  // TODO implement the functionality
+  const createNewForm = async () => {
+    const newFormData = {
+      // Your form data here
+    };
+    await formStore.createNewFormConfiguration(newFormData);
+  };
 </script>
 
 <svelte:head>

@@ -28,8 +28,6 @@
 <dialog id="modal-example">
   <article>
     <header>
-      <!-- rel is necessary here for the close button -->
-      <button aria-label="Close" rel="prev" data-target="modal-example" on:click={toggleModal}></button>
       <h3>Confirm your action!</h3>
     </header>
     <p>
@@ -38,7 +36,7 @@
     </p>
     <footer>
       <button class="secondary" data-target="modal-example" on:click={toggleModal}>Cancel</button>
-      <button autofocus data-target="modal-example" on:click={toggleModal}> Confirm </button>
+      <button data-target="modal-example" on:click={toggleModal}> Confirm </button>
     </footer>
   </article>
 </dialog>
